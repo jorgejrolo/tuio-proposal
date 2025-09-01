@@ -81,11 +81,12 @@ export default function Success() {
           {cases.map((c, i) => (
             <div
               key={i}
-              style={{ width: `${100 / cases.length}%`, padding: '0 10%' }}
+              className="case-slide"
+              style={{ width: `${100 / cases.length}%` }}
             >
               <div
                 className="card"
-                style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', height: '100%' }}
+                style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', height: '100%' }}
               >
                 <Image
                   src={c.img}

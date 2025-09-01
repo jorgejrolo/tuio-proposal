@@ -229,6 +229,16 @@ section {
   color: var(--muted);
 }
 
+.case-slide {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .case-slide {
+    padding: 0 10%;
+  }
+}
+
 /* Timeline Steps */
 .timeline {
   display: grid;
