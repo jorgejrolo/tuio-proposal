@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import NavigationButtons from '../components/NavigationButtons';
+import { useRouter } from 'next/router';
 
 /**
  * Page showcasing anonymised success stories from previous
@@ -8,6 +8,8 @@ import NavigationButtons from '../components/NavigationButtons';
  * objetivos, acciones y resultados logrados.
  */
 export default function Success() {
+  const router = useRouter();
+  const { plan, services } = router.query;
   const cases = [
     {
       sector: 'Finanzas',
@@ -23,7 +25,7 @@ export default function Success() {
     },
     {
       sector: 'Turismo',
-      img: '/assets/travel.png',
+      img: '/assets/travel2.png',
       title: 'Lanzamiento de vertical de viajes para un comparador',
       objectives: 'Desarrollar una nueva vertical para seguros de viaje, optimizar la arquitectura y contenido para capturar tráfico cualificado.',
       actions: [
@@ -33,12 +35,24 @@ export default function Success() {
       ],
       results: ['+80% sesiones orgánicas en 3 meses', '3× solicitudes de presupuesto', '1.000+ menciones en LLMs'],
     },
+    {
+      sector: 'Seguros',
+      img: '/assets/insurance.png',
+      title: 'Estrategia SEO integral para aseguradora digital',
+      objectives: 'Aumentar la captación de leads y optimizar la autoridad en un mercado altamente competitivo de seguros online.',
+      actions: [
+        'Auditoría SEO multidisciplinar (técnica, contenidos, autoridad y EEAT).',
+        'Desarrollo de contenido evergreen (glosarios, guías, comparadores) y optimización del funnel.',
+        'Plan de link building segmentado por productos (hogar, salud, vida) y presencia en medios especializados.',
+      ],
+      results: ['+70% tráfico orgánico en 5 meses', '+45% leads desde orgánico', 'Top 3 en 15 keywords transaccionales'],
+    },
   ];
   return (
     <section>
       <h1>Casos de éxito (anónimos)</h1>
       <p>
-        Para ilustrar el impacto de nuestra metodología, compartimos dos ejemplos
+        Para ilustrar el impacto de nuestra metodología, compartimos tres ejemplos
         sectoriales (sin revelar nombres comerciales) en los que se aplicaron
         estrategias similares a las propuestas para Tuio.
       </p>
@@ -67,7 +81,16 @@ export default function Success() {
           </div>
         ))}
       </div>
-      <NavigationButtons prev="/investment" next="/next" />
+      {/* Navegación personalizada: conserva los parámetros de la selección */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
+        <a className="btn ghost" href="/investment">Anterior</a>
+        <a
+          className="btn primary"
+          href={`/next?plan=${plan || ''}&services=${services || ''}`}
+        >
+          Siguiente
+        </a>
+      </div>
     </section>
   );
 }

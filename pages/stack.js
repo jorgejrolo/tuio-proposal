@@ -49,8 +49,9 @@ export default function Stack() {
       <h1>1) Auditoría y definición de stack tecnológico</h1>
       <p>
         Analizamos el framework actual de Tuio y proponemos el stack ideal para
-        crecimiento estable, performance y SEO. Selecciona una opción para
-        conocer sus ventajas.
+        crecimiento estable, rendimiento y SEO. Antes de decidir, es importante
+        comprender los riesgos de depender completamente de plataformas cerradas y
+        valorar soluciones híbridas que ofrezcan flexibilidad y control.
       </p>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
         {options.map((opt) => (
@@ -63,8 +64,8 @@ export default function Stack() {
               border: 'none',
               cursor: 'pointer',
               fontWeight: 600,
-              background: active === opt.key ? 'var(--brand)' : 'rgba(255,255,255,0.1)',
-              color: active === opt.key ? '#fff' : 'var(--muted)',
+              background: active === opt.key ? 'var(--accent)' : 'rgba(0, 195, 176, 0.1)',
+              color: active === opt.key ? '#fff' : 'var(--accent-dark)',
             }}
           >
             {opt.label}
@@ -84,6 +85,11 @@ export default function Stack() {
           implementación y listado de dependencias y herramientas sugeridas.
         </p>
       </div>
+      {/* Mostrar la opción seleccionada para reforzar la elección */}
+      <p style={{ marginTop: '20px', fontStyle: 'italic', color: '#6b7280' }}>
+        Opción seleccionada:&nbsp;
+        <strong style={{ color: 'var(--accent-dark)' }}>{current.label}</strong>
+      </p>
       <NavigationButtons prev="/overview" next="/audits" />
     </section>
   );

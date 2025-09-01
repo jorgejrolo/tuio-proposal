@@ -19,11 +19,6 @@ export default function KPIs() {
       goal: '+60% en 6 meses',
     },
     {
-      name: 'Autoridad del dominio',
-      baseline: 'DA 35',
-      goal: 'DA 40+',
-    },
-    {
       name: 'Menciones en LLM',
       baseline: 'Apenas referenciado',
       goal: 'Aparecer en 10+ consultas relevantes',

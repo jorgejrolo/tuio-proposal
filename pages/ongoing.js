@@ -10,10 +10,18 @@ export default function Ongoing() {
     <section>
       <h1>5) Servicio SEO ongoing (opcional)</h1>
       <p>
-        Una vez que la migración y el lanzamiento del vertical Travel estén
-        en marcha, el mantenimiento SEO se convierte en el motor de mejora
-        continua. Este servicio mensual asegura que Tuio permanezca a la
-        vanguardia de la evolución de los buscadores y las IA.
+        El trabajo no termina tras la migración y el lanzamiento del nuevo
+        vertical. Los algoritmos cambian a diario, aparecen nuevas
+        funcionalidades en las SERP y la competencia no descansa. Para
+        mantenerse en lo más alto se necesita un mantenimiento continuo que
+        optimice, experimente y se adapte.
+      </p>
+      <p>
+        Nuestro servicio mensual de SEO ongoing es la herramienta que garantiza
+        que Tuio evolucione al ritmo de Google y de las IA generativas. Con
+        revisiones técnicas constantes, optimización de contenidos, link
+        building y reporting, convertiremos la estrategia en un proceso vivo y
+        sostenible.
       </p>
       <div className="card" style={{ marginTop: '20px' }}>
         <h3>Tareas recurrentes</h3>

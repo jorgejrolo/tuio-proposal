@@ -21,13 +21,13 @@ export default function Roadmap() {
     },
     {
       num: '03',
-      title: 'Migración a Lovable',
+      title: 'Migración SEO',
       duration: '6 semanas',
       desc: 'Ejecución de la checklist de migración: preparación, desarrollo, QA, lanzamiento y seguimiento. Redirecciones y formación.',
     },
     {
       num: '04',
-      title: 'Vertical Travel',
+      title: 'Lanzamiento Travel',
       duration: '4 semanas',
       desc: 'Investigación, diseño de arquitectura, producción de plantillas y contenidos, y lanzamiento inicial del vertical.',
     },
@@ -40,9 +40,9 @@ export default function Roadmap() {
         entregables principales. Las fechas exactas se adaptarán al ritmo y
         disponibilidad de Tuio.
       </p>
-      <div className="timeline" style={{ marginTop: '30px' }}>
+      <div className="timeline" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
         {steps.map((s) => (
-          <div key={s.num} className="step">
+          <div key={s.num} className="step" style={{ position: 'relative' }}>
             <div className="num">{s.num}</div>
             <b>{s.title}</b>
             <p style={{ margin: '4px 0', fontWeight: 600 }}>{s.duration}</p>

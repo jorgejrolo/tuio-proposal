@@ -11,10 +11,17 @@ export default function Travel() {
     <section>
       <h1>4) Lanzamiento de nuevo vertical «Travel»</h1>
       <p>
-        Crear un vertical específico de seguros de viaje implica entender las
-        necesidades del viajero, diseñar una arquitectura de contenidos ad hoc y
-        combinar marketing de contenidos con SEO programático. Esta fase
-        describe cómo lo haremos.
+        El seguro de viaje es una categoría con un enorme potencial de
+        crecimiento. Sin embargo, muchos players compiten por las mismas
+        palabras clave y la visibilidad se gana con una estrategia vertical
+        especializada. No basta con crear una página genérica: hace falta un
+        ecosistema de contenidos que responda a cada tipo de viajero.
+      </p>
+      <p>
+        Nuestra propuesta combina investigación profunda, arquitectura
+        jerárquica y producción de contenidos de alto valor para posicionar
+        rápidamente a Tuio como referente en seguros de viaje. Aquí te contamos
+        cómo lo llevaremos a cabo.
       </p>
       <div className="card" style={{ marginTop: '20px' }}>
         <h3>Investigación y planificación</h3>
