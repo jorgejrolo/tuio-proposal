@@ -337,11 +337,12 @@ summary::-webkit-details-marker {
   font-weight: 600;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
   padding: 0.6rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #e5e7eb;
   border-radius: var(--radius);
-  background: #0d1218;
+  background: var(--panel);
   color: var(--ink);
 }
 

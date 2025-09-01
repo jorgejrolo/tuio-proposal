@@ -10,18 +10,46 @@ import NavigationButtons from '../components/NavigationButtons';
 export default function Agenda() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
+  const [duration, setDuration] = useState('30');
   const [submitted, setSubmitted] = useState(false);
+
+  const handleDateChange = (e) => {
+    const value = e.target.value;
+    const day = new Date(value).getDay();
+    if (day === 0 || day === 6) {
+      alert('Por favor selecciona un día entre lunes y viernes');
+      setDate('');
+    } else {
+      setDate(value);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!date || !time) return;
+    if (!date || !time || !duration) return;
     const subject = encodeURIComponent('Solicitud de reunión Tuio');
-    const body = encodeURIComponent(`Hola Jorge,\n\nMe gustaría agendar una reunión el ${date} a las ${time}.\n\nGracias.`);
+    const formattedDate = new Date(date).toLocaleDateString('es-ES');
+    const durText = duration === '30' ? '30 minutos' : '1 hora';
+    const body = encodeURIComponent(
+      `Hola Jorge,\n\nMe gustaría agendar una reunión el ${formattedDate} a las ${time} con una duración de ${durText}.\n\nGracias.`
+    );
     window.location.href = `mailto:hola@jorgejrolo.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
   const today = new Date().toISOString().split('T')[0];
+
+  const generateTimeSlots = () => {
+    const slots = [];
+    for (let hour = 17; hour <= 21; hour++) {
+      const h = String(hour).padStart(2, '0');
+      slots.push(`${h}:00`);
+      if (hour < 21) slots.push(`${h}:30`);
+    }
+    return slots;
+  };
+
+  const timeSlots = generateTimeSlots();
 
   return (
     <section style={{ maxWidth: '600px', margin: '0 auto' }}>
@@ -40,22 +68,37 @@ export default function Agenda() {
                 id="date"
                 value={date}
                 min={today}
-                onChange={(e) => setDate(e.target.value)}
+                onChange={handleDateChange}
                 required
               />
             </div>
             <div className="form-group">
               <label htmlFor="time">Hora:</label>
-              <input
-                type="time"
+              <select
                 id="time"
                 value={time}
-                min="17:00"
-                max="21:00"
-                step="900"
                 onChange={(e) => setTime(e.target.value)}
                 required
-              />
+              >
+                <option value="">Selecciona la hora</option>
+                {timeSlots.map((slot) => (
+                  <option key={slot} value={slot}>
+                    {slot}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="form-group">
+              <label htmlFor="duration">Duración:</label>
+              <select
+                id="duration"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+                required
+              >
+                <option value="30">30 minutos</option>
+                <option value="60">1 hora</option>
+              </select>
             </div>
             <button type="submit" className="btn primary">Solicitar reunión</button>
           </form>
