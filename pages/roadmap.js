@@ -40,17 +40,19 @@ export default function Roadmap() {
         entregables principales. Las fechas exactas se adaptarán al ritmo y
         disponibilidad de Tuio.
       </p>
-      <div className="timeline" style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
+      <div className="timeline-vertical" style={{ marginTop: '40px' }}>
         {steps.map((s) => (
-          <div key={s.num} className="step" style={{ position: 'relative' }}>
-            <div className="num">{s.num}</div>
-            <b>{s.title}</b>
-            <p style={{ margin: '4px 0', fontWeight: 600 }}>{s.duration}</p>
-            <p>{s.desc}</p>
+          <div key={s.num} className="timeline-item">
+            <div className="timeline-marker">{s.num}</div>
+            <div className="timeline-content">
+              <h4 style={{ margin: '0 0 4px' }}>{s.title}</h4>
+              <p style={{ margin: 0, fontWeight: 600, color: 'var(--accent-dark)' }}>{s.duration}</p>
+              <p style={{ marginTop: '6px' }}>{s.desc}</p>
+            </div>
           </div>
         ))}
       </div>
-      <p style={{ marginTop: '28px', color: '#94a3b8' }}>
+      <p style={{ marginTop: '36px', color: '#94a3b8' }}>
         <strong>Nota:</strong> el servicio de mantenimiento SEO ongoing comenzaría una vez
         completadas estas fases y se factura mensualmente.
       </p>

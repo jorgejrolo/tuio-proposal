@@ -15,11 +15,11 @@ export default function Overview() {
       desc: 'Analizaremos el estado del SEO de Tuio y su visibilidad en buscadores tradicionales y motores generativos para encontrar oportunidades.',
     },
     {
-      title: 'Migración',
-      desc: 'Planificaremos y ejecutaremos la transición a Lovable sin perder autoridad ni tráfico, siguiendo una checklist detallada.',
+      title: 'Migración SEO',
+      desc: 'Planificaremos y ejecutaremos la transición al nuevo stack sin perder autoridad ni tráfico, siguiendo una checklist detallada.',
     },
     {
-      title: 'Vertical Travel',
+      title: 'SEO Setup Travel',
       desc: 'Lanzaremos un nuevo vertical para seguros de viaje con arquitectura, contenidos y difusión pensados para posicionar rápidamente.',
     },
   ];

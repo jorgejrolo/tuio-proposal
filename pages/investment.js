@@ -72,11 +72,11 @@ export default function Investment() {
   };
 
   return (
-    <section>
+    <section style={{ paddingBottom: '180px' }}>
       <h1>Inversión y selección de servicios</h1>
       <p>
-        Selecciona los servicios que deseas contratar. Puedes elegir cada fase de
-        manera individual o beneficiarte de descuentos al contratar todas las
+        Selecciona los servicios que deseas contratar. Puedes elegir cada fase
+        de manera individual o beneficiarte de descuentos al contratar todas las
         fases juntas. Si seleccionas las cuatro fases principales, se aplicará un
         <strong> 15% de descuento</strong>. Al añadir el mantenimiento SEO
         mensual (12 meses) el descuento asciende a un <strong>20%</strong>.
@@ -162,19 +162,21 @@ export default function Investment() {
           </div>
         </div>
       </div>
-      <div className="card" style={{ marginTop: '30px' }}>
-        <h3>Resumen de inversión</h3>
-        <p><strong>Subtotal:</strong> {subtotal.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
-        {discount > 0 && (
-          <p><strong>Descuento:</strong> –{discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
-        )}
-        <p><strong>Total estimado:</strong> {total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
-        <button className="btn primary" style={{ marginTop: '20px' }} onClick={handleContinue}>
-          Siguiente
-        </button>
-      </div>
-      <div style={{ marginTop: '30px' }}>
-        <button className="btn ghost" onClick={() => router.push('/kpis')}>Anterior</button>
+      {/* Sticky summary bar */}
+      <div className="sticky-summary">
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <span style={{ fontWeight: 600 }}>Subtotal:
+            &nbsp;{subtotal.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
+          </span>
+          {discount > 0 && (
+            <span style={{ fontWeight: 600 }}>Descuento: –{discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</span>
+          )}
+          <span style={{ fontWeight: 700 }}>Total: {total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</span>
+        </div>
+        <div style={{ display: 'flex', gap: '12px' }}>
+          <button className="btn ghost" onClick={() => router.push('/kpis')}>Anterior</button>
+          <button className="btn primary" onClick={handleContinue}>Siguiente</button>
+        </div>
       </div>
     </section>
   );

@@ -324,3 +324,59 @@ summary::-webkit-details-marker {
 .agenda-form button {
   margin-top: 1rem;
 }
+
+/* Sticky summary bar for pricing */
+.sticky-summary {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--panel);
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Vertical timeline for roadmap */
+.timeline-vertical {
+  position: relative;
+  margin-left: 20px;
+}
+.timeline-vertical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 14px;
+  width: 2px;
+  background: var(--accent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 40px;
+}
+.timeline-marker {
+  position: absolute;
+  left: -14px;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.timeline-content h4 {
+  margin: 0;
+  font-size: 20px;
+}

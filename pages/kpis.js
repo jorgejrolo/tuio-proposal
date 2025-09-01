@@ -38,9 +38,10 @@ export default function KPIs() {
     <section>
       <h1>Métricas y KPIs</h1>
       <p>
-        Para evaluar el impacto de nuestro trabajo, definimos un conjunto de
-        indicadores clave. Estos valores son aproximados a modo de ejemplo y
-        se ajustarán a la realidad una vez se realicen las auditorías.
+        Para evaluar el impacto de nuestro trabajo definimos un conjunto de
+        indicadores clave. <strong>Los datos que verás a continuación son
+        ejemplos hipotéticos e inventados</strong>, a modo de referencia. Los
+        números reales se establecerán una vez se realicen las auditorías.
       </p>
       <div className="grid" style={{ marginTop: '30px' }}>
         {metrics.map((m, index) => (
