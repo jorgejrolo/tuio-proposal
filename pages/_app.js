@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
+import Head from 'next/head';
 
 /**
  * Custom App component to wrap all pages with the Layout. This
@@ -9,8 +10,14 @@ import Layout from '../components/Layout';
  */
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      {/* Definimos favicon con el logo de Jorge J. Rolo */}
+      <Head>
+        <link rel="icon" type="image/png" href="/assets/jorgejrolo.png" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }

@@ -52,7 +52,7 @@ export default function NextSteps() {
   }
   const handleAccept = () => {
     const subject = encodeURIComponent('Aceptación de propuesta Tuio');
-    let bodyLines: string[] = [];
+    let bodyLines = [];
     bodyLines.push('Hola Jorge,');
     bodyLines.push('');
     if (selectedPlan) {

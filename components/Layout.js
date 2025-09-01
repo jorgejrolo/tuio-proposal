@@ -7,26 +7,10 @@ import { useRouter } from 'next/router';
  * highlights the active route based on the current pathname.
  */
 export default function Layout({ children }) {
-  const router = useRouter();
-
-  // Navigation is hidden in the light version; navItems kept for potential future use
-  const navItems = [];
-
+  // Eliminamos la barra superior y el logo para ofrecer una experiencia limpia
   return (
-    <>
-      <div className="topbar">
-        <div className="inner wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div className="brand" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span className="dot"></span>
-            <span>Tuio · Propuesta</span>
-            {/* Logo de Jorge J. Rolo */}
-            <img src="/assets/jorgejrolo.png" alt="Logo Jorge J. Rolo" style={{ height: '28px', marginLeft: '8px' }} />
-          </div>
-        </div>
-      </div>
-      <main className="wrap">
-        {children}
-      </main>
-    </>
+    <main className="wrap">
+      {children}
+    </main>
   );
 }
