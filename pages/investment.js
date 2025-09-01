@@ -72,8 +72,9 @@ export default function Investment() {
   };
 
   return (
-    <section className="reveal" style={{ paddingBottom: '180px' }}>
-      <h1>Propuesta económica por servicios</h1>
+    <>
+      <section className="reveal" style={{ paddingBottom: '180px' }}>
+        <h1>Propuesta económica por servicios</h1>
       <p>
         Selecciona los servicios que deseas contratar. Puedes elegir cada fase
         de manera individual o beneficiarte de descuentos al contratar todas las
@@ -162,22 +163,32 @@ export default function Investment() {
           </div>
         </div>
       </div>
+      </section>
       {/* Sticky summary bar */}
       <div className="sticky-summary">
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span style={{ fontWeight: 600 }}>Subtotal:
-            &nbsp;{subtotal.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
+          <span style={{ fontWeight: 600 }}>
+            Subtotal:&nbsp;{subtotal.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
           </span>
           {discount > 0 && (
-            <span style={{ fontWeight: 600 }}>Descuento: –{discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</span>
+            <span style={{ fontWeight: 600 }}>
+              Descuento: –
+              {discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
+            </span>
           )}
-          <span style={{ fontWeight: 700 }}>Total: {total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</span>
+          <span style={{ fontWeight: 700 }}>
+            Total: {total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
+          </span>
         </div>
         <div style={{ display: 'flex', gap: '12px' }}>
-          <button className="btn ghost" onClick={() => router.push('/kpis')}>Anterior</button>
-          <button className="btn primary" onClick={handleContinue}>Siguiente</button>
+          <button className="btn ghost" onClick={() => router.push('/kpis')}>
+            Anterior
+          </button>
+          <button className="btn primary" onClick={handleContinue}>
+            Siguiente
+          </button>
         </div>
       </div>
-    </section>
+    </>
   );
 }
