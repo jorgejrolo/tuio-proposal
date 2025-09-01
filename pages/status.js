@@ -9,71 +9,84 @@ import NavigationButtons from '../components/NavigationButtons';
 export default function Status() {
   const issues = [
     {
-      emoji: '⚠️',
-      title: 'Contenido placeholder',
-      desc: 'Aproximadamente un 77% de las páginas contienen texto "Lorem ipsum" o contenido ficticio. Esto sugiere que falta contenido definitivo y optimizado, afectando seriamente la relevancia y la percepción de los usuarios y de Google.',
+      emoji: "⚠️",
+      title: "Contenido placeholder",
+      desc:
+        "Aproximadamente un 77% de las páginas contienen texto 'Lorem ipsum' o contenido ficticio. Esto sugiere que falta contenido definitivo y optimizado, afectando seriamente la relevancia y la percepción de los usuarios y de Google.",
     },
     {
-      emoji: '🔗',
-      title: 'Canonicalización incorrecta',
-      desc: 'Un 43% de URLs canoniza hacia otra dirección. Si no se gestiona correctamente, se pierde autoridad y se generan problemas de indexación. Es esencial revisar la configuración de canonicals.',
+      emoji: "🔗",
+      title: "Canonicalización incorrecta",
+      desc:
+        "Un 43% de URLs canoniza hacia otra dirección. Si no se gestiona correctamente, se pierde autoridad y se generan problemas de indexación. Es esencial revisar la configuración de canonicals.",
     },
     {
-      emoji: '🔐',
-      title: 'HTTP vs HTTPS',
-      desc: 'Alrededor del 5% de las URLs aún están en HTTP. Deben redirigirse a HTTPS para garantizar seguridad, confianza del usuario y cumplimiento de las mejores prácticas SEO.',
+      emoji: "🔐",
+      title: "HTTP vs HTTPS",
+      desc:
+        "Alrededor del 5% de las URLs aún están en HTTP. Deben redirigirse a HTTPS para garantizar seguridad, confianza del usuario y cumplimiento de las mejores prácticas SEO.",
     },
     {
-      emoji: '🚫',
-      title: 'Noindex inesperado',
-      desc: 'Una pequeña parte (~0,5%) de las páginas devuelve directivas noindex. Esto impide su posicionamiento; hay que asegurar que solo las páginas no estratégicas estén desindexadas.',
+      emoji: "🚫",
+      title: "Noindex inesperado",
+      desc:
+        "Una pequeña parte (~0,5%) de las páginas devuelve directivas noindex. Esto impide su posicionamiento; hay que asegurar que solo las páginas no estratégicas estén desindexadas.",
     },
     {
-      emoji: '🧩',
-      title: 'Enlazado interno',
-      desc: 'Se detectan páginas sin enlaces de salida internos. Un buen enlazado interno ayuda a distribuir autoridad y mejora la navegabilidad. Recomendamos revisar la estructura de enlaces.',
+      emoji: "🧩",
+      title: "Enlazado interno",
+      desc:
+        "Se detectan páginas sin enlaces de salida internos. Un buen enlazado interno ayuda a distribuir autoridad y mejora la navegabilidad. Recomendamos revisar la estructura de enlaces.",
     },
     {
-      emoji: '💔',
-      title: 'Enlaces rotos',
-      desc: 'Se observan códigos de respuesta 4xx en algunas URLs. Los enlaces rotos generan mala experiencia y desperdician crawl budget. Deben corregirse o redireccionarse.',
+      emoji: "💔",
+      title: "Enlaces rotos",
+      desc:
+        "Se observan códigos de respuesta 4xx en algunas URLs. Los enlaces rotos generan mala experiencia y desperdician crawl budget. Deben corregirse o redireccionarse.",
     },
     {
-      emoji: '📝',
-      title: 'Títulos duplicados o múltiples',
-      desc: 'Algunas páginas presentan títulos duplicados o más de un &lt;title&gt;. Un etiquetado claro y único es esencial para el SEO y la usabilidad.',
+      emoji: "📝",
+      title: "Títulos duplicados o múltiples",
+      desc:
+        "Algunas páginas presentan títulos duplicados o más de un <title>. Un etiquetado claro y único es esencial para el SEO y la usabilidad.",
     },
   ];
   const opportunities = [
     {
-      emoji: '📄',
-      title: 'Crear contenidos de valor',
-      desc: 'Reemplazar los placeholders por contenidos orientados a la intención de búsqueda (guías, comparativas, FAQs) aumentará la relevancia y mejorará el EEAT.',
+      emoji: "📄",
+      title: "Crear contenidos de valor",
+      desc:
+        "Reemplazar los placeholders por contenidos orientados a la intención de búsqueda (guías, comparativas, FAQs) aumentará la relevancia y mejorará el EEAT.",
     },
     {
-      emoji: '🔗',
-      title: 'Optimizar canonicals y redirecciones',
-      desc: 'Revisar la estrategia de canonicals y redirecciones ayudará a consolidar autoridad en las páginas correctas y a evitar contenido duplicado.',
+      emoji: "🔗",
+      title: "Optimizar canonicals y redirecciones",
+      desc:
+        "Revisar la estrategia de canonicals y redirecciones ayudará a consolidar autoridad en las páginas correctas y a evitar contenido duplicado.",
     },
     {
-      emoji: '🔒',
-      title: 'Forzar HTTPS',
-      desc: 'Migrar todas las URLs a HTTPS y configurar HSTS incrementa la seguridad y mejora las señales de confianza para buscadores y usuarios.',
+      emoji: "🔒",
+      title: "Forzar HTTPS",
+      desc:
+        "Migrar todas las URLs a HTTPS y configurar HSTS incrementa la seguridad y mejora las señales de confianza para buscadores y usuarios.",
     },
     {
-      emoji: '🔍',
-      title: 'Mejorar enlazado interno',
-      desc: 'Diseñar una arquitectura coherente con enlaces internos contextuales favorecerá la indexación y el descubrimiento de contenido.',
+      emoji: "🔍",
+      title: "Mejorar enlazado interno",
+      desc:
+        "Diseñar una arquitectura coherente con enlaces internos contextuales favorecerá la indexación y el descubrimiento de contenido.",
     },
     {
-      emoji: '🔧',
-      title: 'Corregir errores 4xx/5xx',
-      desc: 'Auditar enlaces rotos y recursos bloqueados para redirigir o eliminar referencias que afecten a la experiencia y al crawl budget.',
+      emoji: "🔧",
+      title: "Corregir errores 4xx/5xx",
+      desc:
+        "Auditar enlaces rotos y recursos bloqueados para redirigir o eliminar referencias que afecten a la experiencia y al crawl budget.",
     },
     {
-      emoji: '🏷️',
-      title: 'Unificar titles y metas',
-      desc: 'Definir un patrón de títulos único y descriptivo para cada página, ajustando su longitud y evitando duplicidades.',
+      emoji: "🏷️",
+      title: "Unificar titles y metas",
+      desc:
+        "Definir un patrón de títulos único y descriptivo para cada página, ajustando su longitud y evitando duplicidades.",
     },
   ];
   return (
