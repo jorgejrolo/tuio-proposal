@@ -75,6 +75,7 @@ export default function Risks() {
             >
               <span style={{ fontSize: '26px' }}>{cat.emoji}</span>
               <span>{cat.title}</span>
+              <span style={{ marginLeft: 'auto', fontSize: '18px', color: 'var(--accent-dark)' }}>▼</span>
             </summary>
             <div
               style={{

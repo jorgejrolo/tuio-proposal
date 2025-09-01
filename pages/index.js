@@ -42,19 +42,20 @@ export default function Home() {
           style={{
             position: 'relative',
             zIndex: 1,
-            maxWidth: '800px',
-            margin: '0 auto',
-            paddingTop: '30vh',
-            paddingLeft: '20px',
-            paddingRight: '20px',
-            textAlign: 'center',
+            maxWidth: '700px',
+            margin: '0 5%',
+            padding: '24px',
+            background: 'rgba(255, 255, 255, 0.75)',
+            borderRadius: '16px',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
           }}
         >
           <h1
             style={{
-              fontSize: '52px',
+              fontSize: '48px',
               fontWeight: 800,
-              marginBottom: '16px',
+              marginBottom: '12px',
+              lineHeight: 1.2,
               opacity: 0,
               animation: 'fadeUp 0.8s ease forwards',
             }}
@@ -63,10 +64,10 @@ export default function Home() {
           </h1>
           <p
             style={{
-              fontSize: '22px',
+              fontSize: '18px',
               color: '#0f2937',
-              marginBottom: '40px',
-              lineHeight: 1.4,
+              marginBottom: '32px',
+              lineHeight: 1.5,
               opacity: 0,
               animation: 'fadeUp 0.8s ease forwards',
               animationDelay: '0.2s',
@@ -75,7 +76,7 @@ export default function Home() {
             Propuesta de colaboración elaborada para Tuio: auditoría tecnológica, auditoría SEO & IA, migración SEO,
             SEO Setup Travel y mantenimiento SEO ongoing.
           </p>
-          <div className="hero-cta" style={{ justifyContent: 'center' }}>
+          <div className="hero-cta" style={{ justifyContent: 'flex-start' }}>
             <Link href="/overview" legacyBehavior>
               <a className="btn primary">Iniciar propuesta</a>
             </Link>
