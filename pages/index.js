@@ -58,7 +58,7 @@ export default function Home() {
               lineHeight: 1.2,
               opacity: 0,
               animation: 'fadeUp 0.8s ease forwards',
-              whiteSpace: 'nowrap',
+              wordBreak: 'break-word',
             }}
           >
             Propuesta TUIO × Jorge J. Rolo
