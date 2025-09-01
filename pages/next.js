@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import NavigationButtons from '../components/NavigationButtons';
 
 /**
  * Final page with the call to action. Summarises the propuesta
@@ -7,10 +9,21 @@ import Link from 'next/link';
  * a la página de confirmación.
  */
 export default function NextSteps() {
+  const router = useRouter();
+  const { plan } = router.query;
+  const plans = {
+    individual: { name: 'Fases por separado', price: '5.570 €' },
+    pack4: { name: 'Pack 4 fases (–15%)', price: '4.735 €' },
+    pack4plus: { name: 'Pack 4 fases + 12 meses (–20%)', price: '15.980 €' },
+  };
+  const selected = plan && plans[plan] ? plans[plan] : null;
   const handleAccept = () => {
-    const mailto = 'mailto:hola@jorgejrolo.com?subject=Aceptación%20de%20propuesta%20Tuio&body=Hola%20Jorge,%0D%0A%0D%0AAcepto%20la%20propuesta%20para%20Tuio%20según%20los%20términos%20indicados.%0D%0A%0D%0AGracias,%0D%0A';
-    window.location.href = mailto;
-    // después de un pequeño delay navegamos a confirmación
+    // Construir correo con el plan seleccionado
+    const subject = encodeURIComponent('Aceptación de propuesta Tuio');
+    const body = encodeURIComponent(
+      `Hola Jorge,\n\nAcepto la propuesta para Tuio${selected ? ` con la opción "${selected.name}" (${selected.price}).` : ''}.\n\nGracias.`
+    );
+    window.location.href = `mailto:hola@jorgejrolo.com?subject=${subject}&body=${body}`;
     setTimeout(() => {
       window.location.href = '/confirmacion';
     }, 100);
@@ -18,6 +31,13 @@ export default function NextSteps() {
   return (
     <section style={{ textAlign: 'center' }}>
       <h1>Próximos pasos</h1>
+      <p>
+        {selected ? (
+          <>Has seleccionado: <strong>{selected.name}</strong> ({selected.price}).</>
+        ) : (
+          <>No has seleccionado ninguna opción en la pantalla anterior. Puedes aceptar la propuesta o regresar para elegir un plan.</>
+        )}
+      </p>
       <p>
         Si la propuesta cumple tus expectativas y quieres iniciar el proyecto,
         puedes aceptarla oficialmente o, si prefieres, agendar una reunión para
@@ -29,6 +49,7 @@ export default function NextSteps() {
           <a className="btn">Agendar reunión</a>
         </Link>
       </div>
+      <NavigationButtons prev="/success" next={null} />
     </section>
   );
 }

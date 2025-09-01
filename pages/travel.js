@@ -4,6 +4,8 @@
  * como referente en seguros de viaje, tanto en buscadores como en
  * motores de IA.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function Travel() {
   return (
     <section>
@@ -40,6 +42,7 @@ export default function Travel() {
           para su implementación.
         </p>
       </div>
+      <NavigationButtons prev="/migration" next="/ongoing" />
     </section>
   );
 }

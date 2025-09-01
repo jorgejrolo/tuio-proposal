@@ -3,6 +3,8 @@
  * an industry-standard checklist adapted from the consultant's own
  * toolkit and details each fase with claridad.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function Migration() {
   return (
     <section>
@@ -48,6 +50,7 @@ export default function Migration() {
           de QA, así como el informe post-migración con recomendaciones.
         </p>
       </div>
+      <NavigationButtons prev="/audits" next="/travel" />
     </section>
   );
 }

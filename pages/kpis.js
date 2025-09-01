@@ -4,6 +4,8 @@
  * de partida estimado y los objetivos a alcanzar en un periodo
  * determinado.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function KPIs() {
   const metrics = [
     {
@@ -58,6 +60,7 @@ export default function KPIs() {
         <strong>Nota:</strong> estos KPI se adaptarán tras las auditorías, fijando objetivos
         realistas y ambiciosos en colaboración con Tuio.
       </p>
+      <NavigationButtons prev="/roadmap" next="/investment" />
     </section>
   );
 }

@@ -3,6 +3,8 @@
  * clarifies the tareas recurrentes, beneficios y la naturaleza
  * colaborativa de la relación a largo plazo.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function Ongoing() {
   return (
     <section>
@@ -28,6 +30,7 @@ export default function Ongoing() {
           backlog priorizado de mejoras y recomendaciones de experimentación.
         </p>
       </div>
+      <NavigationButtons prev="/travel" next="/roadmap" />
     </section>
   );
 }

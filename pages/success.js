@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NavigationButtons from '../components/NavigationButtons';
 
 /**
  * Page showcasing anonymised success stories from previous
@@ -66,6 +67,7 @@ export default function Success() {
           </div>
         ))}
       </div>
+      <NavigationButtons prev="/investment" next="/next" />
     </section>
   );
 }

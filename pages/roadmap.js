@@ -3,6 +3,8 @@
  * principales tareas. Utiliza la clase timeline definida en
  * globals.css para organizar los pasos en una cuadrícula responsive.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function Roadmap() {
   const steps = [
     {
@@ -52,6 +54,7 @@ export default function Roadmap() {
         <strong>Nota:</strong> el servicio de mantenimiento SEO ongoing comenzaría una vez
         completadas estas fases y se factura mensualmente.
       </p>
+      <NavigationButtons prev="/ongoing" next="/kpis" />
     </section>
   );
 }

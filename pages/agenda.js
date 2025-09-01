@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavigationButtons from '../components/NavigationButtons';
 
 /**
  * Agenda page for scheduling a meeting. Shows a simple form
@@ -65,6 +66,7 @@ export default function Agenda() {
           la reunión. Nos pondremos en contacto contigo para confirmar la cita.
         </p>
       )}
+      <NavigationButtons prev="/next" next={null} />
     </section>
   );
 }

@@ -4,6 +4,8 @@
  * understands exactly qué se revisará y qué entregables
  * recibirán.
  */
+import NavigationButtons from '../components/NavigationButtons';
+
 export default function Audits() {
   return (
     <section>
@@ -38,6 +40,7 @@ export default function Audits() {
           dashboard de seguimiento en Looker/GA4 &amp; Search Console.
         </p>
       </div>
+      <NavigationButtons prev="/stack" next="/migration" />
     </section>
   );
 }

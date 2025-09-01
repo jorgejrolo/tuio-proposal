@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import NavigationButtons from '../components/NavigationButtons';
 
 /**
  * Page describing the stack audit and options. It uses a simple
@@ -83,6 +84,7 @@ export default function Stack() {
           implementación y listado de dependencias y herramientas sugeridas.
         </p>
       </div>
+      <NavigationButtons prev="/overview" next="/audits" />
     </section>
   );
 }
