@@ -186,6 +186,30 @@ section {
   .col-4, .col-6, .col-8, .col-12 { grid-column: span 12; }
 }
 
+/* Animaciones usadas en la portada */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal: los elementos con la clase reveal aparecerán suavemente
+   cuando entren en el viewport gracias al IntersectionObserver definido en _app.js. */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .card {
   background: var(--panel);
   border: 1px solid #e5e7eb;
@@ -379,4 +403,17 @@ summary::-webkit-details-marker {
 .timeline-content h4 {
   margin: 0;
   font-size: 20px;
+}
+
+/* Animación bounce para el indicador de scroll */
+@keyframes bounceY {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-3px);
+  }
 }

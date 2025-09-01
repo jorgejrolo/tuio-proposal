@@ -35,7 +35,7 @@ export default function KPIs() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>Métricas y KPIs</h1>
       <p>
         Para evaluar el impacto de nuestro trabajo definimos un conjunto de

@@ -51,7 +51,7 @@ export default function Audits() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>2) Auditoría SEO y auditoría SEO para IA</h1>
       <p>
         Aunque Tuio cuenta ya con presencia orgánica, la realidad es que muchos problemas de SEO permanecen ocultos hasta
@@ -64,17 +64,44 @@ export default function Audits() {
         por la búsqueda generativa. Detectaremos barreras técnicas, oportunidades de contenido y acciones concretas para
         que Tuio destaque frente a la competencia.
       </p>
-      <div className="grid" style={{ marginTop: '30px' }}>
-        {categories.map((cat, index) => (
-          <div key={index} className="col-6">
-            <div className="card" style={{ height: '100%' }}>
-              <div style={{ fontSize: '32px', marginBottom: '8px' }}>{cat.emoji}</div>
-              <h3 style={{ marginTop: 0 }}>{cat.title}</h3>
-              <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '14px' }}>
-                {cat.points.map((p, i) => <li key={i}>{p}</li>)}
+      <p style={{ marginTop: '20px' }}>Despliega cada bloque para conocer las tareas que abordaremos:</p>
+      <div style={{ marginTop: '20px' }}>
+        {categories.map((cat, idx) => (
+          <details key={idx} className="reveal" style={{ marginBottom: '12px' }}>
+            <summary
+              style={{
+                cursor: 'pointer',
+                padding: '12px 16px',
+                borderRadius: '12px',
+                background: 'var(--panel)',
+                border: '1px solid #e5e7eb',
+                boxShadow: 'var(--shadow)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                fontWeight: 600,
+              }}
+            >
+              <span style={{ fontSize: '26px' }}>{cat.emoji}</span>
+              <span>{cat.title}</span>
+            </summary>
+            <div
+              style={{
+                padding: '12px 16px',
+                background: '#f7fafa',
+                borderRadius: '0 0 12px 12px',
+                border: '1px solid #e5e7eb',
+                borderTop: 'none',
+                fontSize: '14px',
+              }}
+            >
+              <ul style={{ paddingLeft: '20px', margin: 0 }}>
+                {cat.points.map((p, i) => (
+                  <li key={i}>{p}</li>
+                ))}
               </ul>
             </div>
-          </div>
+          </details>
         ))}
       </div>
       <p style={{ marginTop: '22px', color: '#94a3b8' }}>

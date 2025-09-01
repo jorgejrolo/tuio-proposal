@@ -72,7 +72,7 @@ export default function Investment() {
   };
 
   return (
-    <section style={{ paddingBottom: '180px' }}>
+    <section className="reveal" style={{ paddingBottom: '180px' }}>
       <h1>Inversión y selección de servicios</h1>
       <p>
         Selecciona los servicios que deseas contratar. Puedes elegir cada fase

@@ -50,7 +50,7 @@ export default function Migration() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>3) Plan de migración SEO</h1>
       <p>
         Migrar una web sin un control estricto es una de las causas más comunes de caídas drásticas de tráfico y

@@ -33,7 +33,7 @@ export default function Roadmap() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>Roadmap y planificación</h1>
       <p>
         Este calendario visual resume las fases, su duración estimada y los

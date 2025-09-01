@@ -40,7 +40,7 @@ export default function Ongoing() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>5) Servicio SEO ongoing (opcional)</h1>
       <p>
         El trabajo no termina tras la migración y el lanzamiento del nuevo vertical. Los algoritmos cambian a diario,

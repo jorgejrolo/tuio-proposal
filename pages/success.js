@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 /**
  * Page showcasing anonymised success stories from previous
@@ -10,6 +11,8 @@ import { useRouter } from 'next/router';
 export default function Success() {
   const router = useRouter();
   const { plan, services } = router.query;
+  // Índice del caso actualmente visible en el carrusel
+  const [index, setIndex] = useState(0);
   const cases = [
     {
       sector: 'Finanzas',
@@ -23,7 +26,7 @@ export default function Success() {
         'Estrategia de link building y menciones en medios financieros.',
       ],
       // Resultados moderados y verosímiles
-      results: ['+50% keywords Top 10', '+35% tráfico orgánico en 6 meses', '+40% leads orgánicos'],
+      results: ['+35% keywords en Top 10', '+30% tráfico orgánico en 6 meses', '+25% leads orgánicos'],
     },
     {
       sector: 'Turismo',
@@ -36,7 +39,7 @@ export default function Success() {
         'Creación de plantillas interactivas y contenido evergreen.',
         'Promoción en blogs de viajes y optimización para IA generativa.',
       ],
-      results: ['+70% sesiones orgánicas en 3 meses', '2× solicitudes de presupuesto', '500+ menciones en LLMs'],
+      results: ['+60% sesiones orgánicas en 3 meses', '+45% solicitudes de presupuesto', '50+ menciones en LLMs'],
     },
     {
       sector: 'Seguros',
@@ -49,41 +52,102 @@ export default function Success() {
         'Desarrollo de contenido evergreen (glosarios, guías, comparadores) y optimización del funnel.',
         'Plan de link building segmentado por productos (hogar, salud, vida) y presencia en medios especializados.',
       ],
-      results: ['+60% tráfico orgánico en 5 meses', '+40% leads desde orgánico', 'Top 5 en 10 keywords transaccionales'],
+      results: ['+50% tráfico orgánico en 5 meses', '+35% leads desde orgánico', 'Top 5 en 8 keywords transaccionales'],
     },
   ];
+  // Funciones de navegación del carrusel
+  const prev = () => setIndex((index - 1 + cases.length) % cases.length);
+  const next = () => setIndex((index + 1) % cases.length);
+
   return (
-    <section>
-      <h1>Casos de éxito (anónimos)</h1>
+    <section className="reveal">
+      <h1>Casos de éxito</h1>
       <p>
         Para ilustrar el impacto de nuestra metodología, compartimos tres ejemplos
         sectoriales (sin revelar nombres comerciales) en los que se aplicaron
         estrategias similares a las propuestas para Tuio.
       </p>
-      <div className="grid" style={{ marginTop: '32px' }}>
-        {cases.map((c, index) => (
-          <div key={index} className="col-4">
-            <div className="card" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <Image
-                src={c.img}
-                alt={`Sector ${c.sector}`}
-                width={500}
-                height={280}
-                style={{ borderRadius: '14px', width: '100%', height: 'auto' }}
-              />
-              <h3 style={{ marginTop: '14px' }}>{c.title}</h3>
-              <p style={{ fontSize: '14px' }}><strong>Objetivos:</strong> {c.objectives}</p>
-              <p style={{ fontSize: '14px' }}><strong>Acciones clave:</strong></p>
-              <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '14px' }}>
-                {c.actions.map((a, i) => <li key={i}>{a}</li>)}
-              </ul>
-              <p style={{ marginTop: '8px', fontSize: '14px' }}><strong>Resultados:</strong></p>
-              <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '14px' }}>
-                {c.results.map((r, i) => <li key={i}>{r}</li>)}
-              </ul>
+      <div style={{ position: 'relative', overflow: 'hidden', marginTop: '30px' }}>
+        {/* Carrusel de casos */}
+        <div
+          style={{
+            display: 'flex',
+            transition: 'transform 0.5s ease',
+            transform: `translateX(-${index * 100}%)`,
+            width: `${cases.length * 100}%`,
+          }}
+        >
+          {cases.map((c, i) => (
+            <div
+              key={i}
+              style={{ width: '100%', padding: '0 10%' }}
+            >
+              <div
+                className="card"
+                style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', height: '100%' }}
+              >
+                <Image
+                  src={c.img}
+                  alt={`Sector ${c.sector}`}
+                  width={800}
+                  height={400}
+                  style={{ borderRadius: '14px', width: '100%', height: 'auto' }}
+                />
+                <h3 style={{ marginTop: '14px' }}>{c.title}</h3>
+                <p style={{ fontSize: '14px' }}><strong>Objetivos:</strong> {c.objectives}</p>
+                <p style={{ fontSize: '14px' }}><strong>Acciones clave:</strong></p>
+                <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '14px' }}>
+                  {c.actions.map((a, j) => <li key={j}>{a}</li>)}
+                </ul>
+                <p style={{ marginTop: '8px', fontSize: '14px' }}><strong>Resultados:</strong></p>
+                <ul style={{ paddingLeft: '20px', margin: 0, fontSize: '14px' }}>
+                  {c.results.map((r, j) => <li key={j}>{r}</li>)}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        {/* Botones de navegación */}
+        <button
+          onClick={prev}
+          aria-label="Anterior caso"
+          style={{
+            position: 'absolute',
+            left: '10px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'rgba(0, 195, 176, 0.8)',
+            border: 'none',
+            color: '#ffffff',
+            borderRadius: '50%',
+            width: '36px',
+            height: '36px',
+            cursor: 'pointer',
+            fontSize: '20px',
+          }}
+        >
+          ‹
+        </button>
+        <button
+          onClick={next}
+          aria-label="Siguiente caso"
+          style={{
+            position: 'absolute',
+            right: '10px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: 'rgba(0, 195, 176, 0.8)',
+            border: 'none',
+            color: '#ffffff',
+            borderRadius: '50%',
+            width: '36px',
+            height: '36px',
+            cursor: 'pointer',
+            fontSize: '20px',
+          }}
+        >
+          ›
+        </button>
       </div>
       {/* Navegación personalizada: conserva los parámetros de la selección */}
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>

@@ -39,7 +39,7 @@ export default function Travel() {
     },
   ];
   return (
-    <section>
+    <section className="reveal">
       <h1>4) Lanzamiento de nuevo vertical «Travel»</h1>
       <p>
         El seguro de viaje es una categoría con un enorme potencial de crecimiento. Sin embargo, muchos players compiten

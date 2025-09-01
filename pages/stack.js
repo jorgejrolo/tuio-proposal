@@ -45,7 +45,7 @@ export default function Stack() {
   const current = options.find((opt) => opt.key === active);
 
   return (
-    <section>
+    <section className="reveal">
       <h1>1) Auditoría y definición de stack tecnológico</h1>
       <p>
         Analizamos el framework actual de Tuio y proponemos el stack ideal para

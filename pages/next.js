@@ -78,16 +78,20 @@ export default function NextSteps() {
     }, 100);
   };
   return (
-    <section style={{ textAlign: 'center' }}>
+    <section className="reveal" style={{ textAlign: 'center' }}>
       <h1>Próximos pasos</h1>
       {selectedPlan ? (
-        <p>
-          Has seleccionado: <strong>{selectedPlan.name}</strong> ({selectedPlan.price.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}).
-        </p>
+        <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <div style={{ fontSize: '36px', marginBottom: '12px' }}>🤝</div>
+          <p style={{ marginBottom: '8px' }}>Has seleccionado:</p>
+          <h3 style={{ margin: '0 0 12px' }}>{selectedPlan.name}</h3>
+          <p style={{ fontWeight: 700 }}>{selectedPlan.price.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
+        </div>
       ) : individualSummary ? (
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <p>Has seleccionado las siguientes fases:</p>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+        <div className="card" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <div style={{ fontSize: '36px', marginBottom: '12px' }}>🤝</div>
+          <p style={{ marginBottom: '8px' }}>Has seleccionado las siguientes fases:</p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {individualSummary.services.map((s) => (
               <li key={s.name} style={{ marginBottom: '4px' }}>
                 {s.name}: {s.price.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}
@@ -95,9 +99,9 @@ export default function NextSteps() {
             ))}
           </ul>
           {individualSummary.discount > 0 && (
-            <p>Descuento aplicado: -{individualSummary.discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
+            <p style={{ marginTop: '8px' }}>Descuento aplicado: -{individualSummary.discount.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
           )}
-          <p>Total estimado: {individualSummary.total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
+          <p style={{ fontWeight: 700, marginTop: '8px' }}>Total estimado: {individualSummary.total.toLocaleString('es-ES', { style: 'currency', currency: 'EUR' })}</p>
         </div>
       ) : (
         <p>No has seleccionado ninguna opción en la pantalla anterior. Puedes aceptar la propuesta o regresar para elegir un plan.</p>
