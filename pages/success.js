@@ -44,7 +44,7 @@ export default function Success() {
     },
     {
       sector: 'Seguros',
-      img: '/assets/insurance.png',
+      img: '/assets/insurance.svg',
       title: 'Estrategia SEO integral para aseguradora digital',
       objectives:
         'Aumentar la captación de leads y optimizar la autoridad en un mercado altamente competitivo de seguros online.',
