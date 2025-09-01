@@ -27,7 +27,7 @@ export default function Success() {
         'Estrategia de link building y menciones en medios financieros.',
       ],
       // Resultados moderados y verosímiles
-      results: ['+35% keywords en Top 10', '+30% tráfico orgánico en 6 meses', '+25% leads orgánicos'],
+      results: ['+35% visibilidad orgánica', '+30% tráfico orgánico en 6 meses', '+25% leads orgánicos'],
     },
     {
       sector: 'Turismo',
@@ -92,7 +92,7 @@ export default function Success() {
                   alt={`Sector ${c.sector}`}
                   width={800}
                   height={400}
-                  style={{ borderRadius: '14px', width: '100%', height: 'auto' }}
+                  style={{ borderRadius: '14px', width: '100%', height: '400px', objectFit: 'contain' }}
                 />
                 <h3 style={{ marginTop: '14px' }}>{c.title}</h3>
                 <p style={{ fontSize: '14px' }}><strong>Objetivos:</strong> {c.objectives}</p>

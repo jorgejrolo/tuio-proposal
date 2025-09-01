@@ -52,12 +52,13 @@ export default function Home() {
         >
           <h1
             style={{
-              fontSize: 'clamp(32px, 5vw, 46px)',
+              fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 800,
               marginBottom: '12px',
               lineHeight: 1.2,
               opacity: 0,
               animation: 'fadeUp 0.8s ease forwards',
+              whiteSpace: 'nowrap',
             }}
           >
             Propuesta TUIO × Jorge J. Rolo
