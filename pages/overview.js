@@ -45,7 +45,7 @@ export default function Overview() {
           </div>
         ))}
       </div>
-      <NavigationButtons prev="/" next="/risks" />
+      <NavigationButtons prev="/" next="/status" />
     </section>
   );
 }
