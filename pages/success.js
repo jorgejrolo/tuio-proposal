@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import NavigationButtons from '../components/NavigationButtons';
 
 /**
  * Page showcasing anonymised success stories from previous
@@ -56,8 +57,8 @@ export default function Success() {
     },
   ];
   // Funciones de navegación del carrusel
-  const prev = () => setIndex((index - 1 + cases.length) % cases.length);
-  const next = () => setIndex((index + 1) % cases.length);
+  const prev = () => setIndex((i) => (i - 1 + cases.length) % cases.length);
+  const next = () => setIndex((i) => (i + 1) % cases.length);
 
   return (
     <section className="reveal">
@@ -73,14 +74,14 @@ export default function Success() {
           style={{
             display: 'flex',
             transition: 'transform 0.5s ease',
-            transform: `translateX(-${index * 100}%)`,
+            transform: `translateX(-${(index * 100) / cases.length}%)`,
             width: `${cases.length * 100}%`,
           }}
         >
           {cases.map((c, i) => (
             <div
               key={i}
-              style={{ width: '100%', padding: '0 10%' }}
+              style={{ width: `${100 / cases.length}%`, padding: '0 10%' }}
             >
               <div
                 className="card"
@@ -149,16 +150,10 @@ export default function Success() {
           ›
         </button>
       </div>
-      {/* Navegación personalizada: conserva los parámetros de la selección */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
-        <a className="btn ghost" href="/investment">Anterior</a>
-        <a
-          className="btn primary"
-          href={`/next?plan=${plan || ''}&services=${services || ''}`}
-        >
-          Siguiente
-        </a>
-      </div>
+      <NavigationButtons
+        prev="/investment"
+        next={`/next?plan=${plan || ''}&services=${services || ''}`}
+      />
     </section>
   );
 }
