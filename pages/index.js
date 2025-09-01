@@ -52,7 +52,7 @@ export default function Home() {
         >
           <h1
             style={{
-              fontSize: '48px',
+              fontSize: 'clamp(32px, 5vw, 46px)',
               fontWeight: 800,
               marginBottom: '12px',
               lineHeight: 1.2,
