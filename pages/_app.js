@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 /**
  * Custom App component to wrap all pages with the Layout. This
@@ -10,7 +11,11 @@ import { useEffect } from 'react';
  * untouched.
  */
 export default function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
   // Activamos las animaciones de aparición según scroll usando IntersectionObserver.
+  // Re‑inicializamos el observer cada vez que cambia la ruta para captar
+  // los nuevos elementos con clase `reveal` y evitar pantallas en blanco.
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,7 +32,7 @@ export default function MyApp({ Component, pageProps }) {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, []);
+  }, [router.asPath]);
 
   return (
     <>
