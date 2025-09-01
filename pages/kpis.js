@@ -14,9 +14,9 @@ export default function KPIs() {
       goal: '+50% en 6 meses',
     },
     {
-      name: 'Keywords en Top 10',
-      baseline: '300 términos',
-      goal: '+60% en 6 meses',
+      name: 'Índice de visibilidad',
+      baseline: '2.5 (hipotético)',
+      goal: '+50% en 6 meses',
     },
     {
       name: 'Menciones en LLM',

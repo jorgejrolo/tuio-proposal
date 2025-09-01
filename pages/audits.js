@@ -12,42 +12,65 @@ export default function Audits() {
     {
       emoji: '🧪',
       title: 'Análisis técnico',
-      points: ['Crawl y log analysis', 'Problemas de indexación y redirecciones'],
+      points: [
+        'Crawl y log analysis',
+        'Problemas de indexación y redirecciones',
+        'Revisión de sitemaps y robots.txt',
+      ],
     },
     {
       emoji: '📚',
       title: 'Arquitectura & enlaces',
-      points: ['Jerarquía de contenidos', 'Enlazado interno y páginas huérfanas'],
+      points: [
+        'Jerarquía de contenidos',
+        'Enlazado interno y páginas huérfanas',
+        'Canibalización y estructura de URLs',
+      ],
     },
     {
       emoji: '⚡',
       title: 'Rendimiento & CWV',
-      points: ['Medición de LCP, FID y CLS', 'Optimización de imágenes y scripts'],
+      points: [
+        'Medición de LCP, FID y CLS',
+        'Optimización de imágenes y scripts',
+        'Revisión de servidores y caché',
+      ],
     },
     {
       emoji: '✍️',
       title: 'On‑page & EEAT',
-      points: ['Optimización de títulos, metas y encabezados', 'Actualización de contenidos y EEAT'],
+      points: [
+        'Optimización de títulos, metas y encabezados',
+        'Actualización de contenidos y EEAT',
+        'Datos estructurados y rich snippets',
+      ],
     },
     {
       emoji: '🔗',
       title: 'Autoridad & enlaces',
-      points: ['Auditoría de backlinks y menciones', 'Oportunidades de PR digital'],
+      points: [
+        'Auditoría de backlinks y menciones',
+        'Oportunidades de PR digital',
+        'Evaluación de toxicidad de enlaces',
+      ],
     },
     {
       emoji: '🔍',
       title: 'Keyword research & SERP',
-      points: ['Investigación de términos y clusters', 'Análisis de SERP features y competidores'],
+      points: [
+        'Investigación de términos y clusters',
+        'Análisis de SERP features y competidores',
+        'Análisis de intención de búsqueda',
+      ],
     },
     {
       emoji: '🤖',
       title: 'SEO IA & GEO',
-      points: ['Preparación para motores generativos', 'Citas, datos estructurados y datasets abiertos'],
-    },
-    {
-      emoji: '📏',
-      title: 'KPIs & benchmarks',
-      points: ['Definición de métricas de éxito', 'Establecimiento de baseline comparativo'],
+      points: [
+        'Preparación para motores generativos',
+        'Citas, datos estructurados y datasets abiertos',
+        'Optimización para motores como SGE y Perplexity',
+      ],
     },
   ];
   return (
