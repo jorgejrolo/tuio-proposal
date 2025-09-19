@@ -1,14 +1,13 @@
 import '../styles/globals.css';
 import Layout from '../components/Layout';
+import ProposalProtection from '../components/ProposalProtection';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 /**
- * Custom App component to wrap all pages with the Layout. This
- * component imports the global styles and ensures the navigation
- * bar is present on every page. It also passes pageProps through
- * untouched.
+ * Custom App component to wrap all pages with the Layout and proposal protection.
+ * Since the proposal has expired, all pages except /expired will be redirected.
  */
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -40,9 +39,17 @@ export default function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" type="image/png" href="/assets/jorgejrolo.png" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ProposalProtection>
+        {router.pathname === '/expired' ? (
+          // Para la página de caducidad, no usar el Layout normal
+          <Component {...pageProps} />
+        ) : (
+          // Para otras páginas (que serán redirigidas), usar Layout
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </ProposalProtection>
     </>
   );
 }

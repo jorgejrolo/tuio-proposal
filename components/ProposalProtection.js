@@ -2,17 +2,25 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 /**
- * Landing page redirects to expired proposal page since the proposal has ended.
+ * Componente que protege las páginas de la propuesta caducada
+ * redirigiendo automáticamente a la página de aviso de caducidad
  */
-export default function Home() {
+export default function ProposalProtection({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirigir inmediatamente a la página de propuesta caducada
-    router.push('/expired');
+    // Solo permitir acceso a la página de propuesta caducada
+    if (router.pathname !== '/expired') {
+      router.push('/expired');
+    }
   }, [router]);
 
-  // Mostrar un mensaje de carga mientras se redirige
+  // Si estamos en la página de caducidad, mostrar el contenido
+  if (router.pathname === '/expired') {
+    return children;
+  }
+
+  // Para cualquier otra página, mostrar mensaje de carga mientras redirige
   return (
     <div style={{
       minHeight: '100vh',
@@ -32,7 +40,7 @@ export default function Home() {
           ⏰
         </div>
         <p style={{ fontSize: '18px', margin: 0 }}>
-          Redirigiendo...
+          Propuesta caducada. Redirigiendo...
         </p>
       </div>
     </div>
